@@ -22,6 +22,9 @@ public class Diagnosis {
     @Column(name = "heart_rate")
     private Integer heartRate;
 
+    @Column(name = "value")
+    private String value;
+
     @Column(name = "description")
     private String descrpition;
 
@@ -42,6 +45,14 @@ public class Diagnosis {
 
     public void setBloodPressure(Integer bloodPressure) {
         this.bloodPressure = bloodPressure;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 
     public Integer getHeartRate() {

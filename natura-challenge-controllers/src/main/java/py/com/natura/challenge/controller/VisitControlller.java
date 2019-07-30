@@ -22,6 +22,7 @@ public class VisitControlller {
 
     public void createVisit(Visit visit) throws Exception {
         try {
+            visit.setObservation(diagnosis(visit.getBloodPressure(), visit.getHeartRate()));
             dao.insert(visit);
         } catch (Exception e) {
             e.printStackTrace();
@@ -31,6 +32,7 @@ public class VisitControlller {
 
     public void updateVisit(Visit visit, Integer id) throws Exception {
         try {
+            visit.setObservation(diagnosis(visit.getBloodPressure(), visit.getHeartRate()));
             dao.update(visit, id);
         } catch (Exception e) {
             e.printStackTrace();
@@ -67,12 +69,8 @@ public class VisitControlller {
         }
     }
 
-    public String diagnosis(Integer pressure, Integer heartRate) {
-        String diagnosis;
-
-        diagnosisController.selectAll();
-
-        return diagnosis;
+    public String diagnosis(Integer pressure, Integer heartRate) throws Exception {
+        return diagnosisController.checkPressureValues(pressure, heartRate);
     }
 
 }

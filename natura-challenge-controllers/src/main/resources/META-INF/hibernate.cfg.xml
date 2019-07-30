@@ -23,6 +23,7 @@
         <!-- Mapping With Model Class Containing Annotations -->
         <mapping class="py.com.natura.challenge.model.Pacient"/>
         <mapping class="py.com.natura.challenge.model.Visit"/>
+        <mapping class="py.com.natura.challenge.model.Diagnosis"/>
 
     </session-factory>
 </hibernate-configuration>

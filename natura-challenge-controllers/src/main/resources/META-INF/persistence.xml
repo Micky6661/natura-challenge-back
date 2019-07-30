@@ -8,6 +8,7 @@
 
         <class>py.com.natura.challenge.model.Visit</class>
         <class>py.com.natura.challenge.model.Pacient</class>
+        <class>py.com.natura.challenge.model.Diagnosis</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
