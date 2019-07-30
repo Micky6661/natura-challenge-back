@@ -15,16 +15,11 @@
         <version.jersey-core>1.8</version.jersey-core>
         <version.javaee-api>7.0</version.javaee-api>
         <version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
-        <version.mysql>5.1.21</version.mysql>
-        <version.resteasy>3.8.1.Final</version.resteasy>
-        <version.hibernate-core>4.3.6.Final</version.hibernate-core>
-        <version.hibernate-entitymanager>4.3.6.Final</version.hibernate-entitymanager>
-        <version.hibernate-validator>5.2.4.Final</version.hibernate-validator>
-        <version.hibernate.ehcache>5.1.0.Final</version.hibernate.ehcache>
+        <version.mysql>8.0.13</version.mysql>
+        <version.hibernate-core>5.3.7.Final</version.hibernate-core>
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
@@ -39,33 +34,22 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- MySQL connector -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${version.mysql}</version>
-            <scope>provided</scope>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>${version.hibernate-core}</version>
-            <scope>provided</scope>
+            <version>5.3.7.Final</version>
         </dependency>
 
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>${version.hibernate-entitymanager}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>${version.hibernate-validator}</version>
-            <scope>provided</scope>
+            <version>5.3.7.Final</version>
         </dependency>
 
 

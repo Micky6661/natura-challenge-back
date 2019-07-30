@@ -24,6 +24,5 @@
         <mapping class="py.com.natura.challenge.model.Pacient"/>
         <mapping class="py.com.natura.challenge.model.Visit"/>
 
-
     </session-factory>
 </hibernate-configuration>

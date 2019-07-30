@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class PacientDAO extends DBUtils<Pacient> {
 
-    private static final String TABLE_NAME = "pacient";
+    private static final String TABLE_NAME = "Pacient";
 
     public List<Pacient> getPacients() throws Exception {
         List<Pacient> pacientList;
@@ -27,14 +27,14 @@ public class PacientDAO extends DBUtils<Pacient> {
     }
 
     public Pacient getPacientById(int id) throws Exception {
-        Pacient cliente;
+        Pacient pacient;
         try {
-            cliente = this.findById(Pacient.class, id);
+            pacient = this.findById(Pacient.class, id);
         } catch (Exception e) {
             e.printStackTrace();
             throw new Exception("ERROR", e);
         }
 
-        return cliente;
+        return pacient;
     }
 }

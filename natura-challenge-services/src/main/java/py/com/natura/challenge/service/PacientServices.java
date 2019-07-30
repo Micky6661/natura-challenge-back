@@ -7,7 +7,7 @@ import py.com.natura.challenge.model.Pacient;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import java.util.List;
+import javax.ws.rs.core.Response;
 
 /**
  * @author Miguel Martinez
@@ -17,20 +17,29 @@ import java.util.List;
 
 @Path("/pacients")
 @Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public class PacientServices {
 
     @Inject
     PacientController controller;
 
     @GET
-    public List<Pacient> getAllPacients() throws Exception {
-        return controller.selectAll();
+    public Response getAllPacients() throws Exception {
+        try {
+            return Response.ok(controller.selectAll()).build();
+        } catch (Exception e) {
+            throw new Exception("ERROR", e);
+        }
     }
 
     @GET
     @Path("/get/{pacient}")
-    public Pacient getPacient(@PathParam("pacient") Integer id) throws Exception {
-        return controller.getPacientById(id);
+    public Response getPacient(@PathParam("pacient") Integer id) throws Exception {
+        try {
+            return Response.ok(controller.getPacientById(id)).build();
+        } catch (Exception e) {
+            throw new Exception("ERROR", e);
+        }
     }
 
     @POST

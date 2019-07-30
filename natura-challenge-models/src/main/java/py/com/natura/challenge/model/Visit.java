@@ -21,9 +21,9 @@ public class Visit implements Serializable {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "pacient_id", nullable = false)
-    private Integer pacientId;
+    private Pacient pacient;
 
-    @Column(name = "blood_presure")
+    @Column(name = "blood_pressure")
     private Integer bloodPressure;
 
     @Column(name = "heart_rate")
@@ -46,12 +46,12 @@ public class Visit implements Serializable {
         this.visitId = visitId;
     }
 
-    public Integer getPacientId() {
-        return pacientId;
+    public Pacient getPacient() {
+        return pacient;
     }
 
-    public void setPacientId(Integer pacientId) {
-        this.pacientId = pacientId;
+    public void setPacient(Pacient pacient) {
+        this.pacient = pacient;
     }
 
     public Integer getBloodPressure() {

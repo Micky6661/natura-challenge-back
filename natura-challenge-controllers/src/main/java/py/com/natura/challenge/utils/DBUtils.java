@@ -1,7 +1,11 @@
 package py.com.natura.challenge.utils;
 
-import org.hibernate.*;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -15,19 +19,19 @@ import java.util.List;
  */
 public class DBUtils<T> {
 
-    public static SessionFactory factory;
-    public EntityManagerFactory entityManagerFactory;
-    public EntityManager manager;
+    private static SessionFactory factory;
+    private EntityManagerFactory entityManagerFactory;
+    private EntityManager manager;
 
     public DBUtils() {
         try {
             factory = new Configuration().configure("META-INF/hibernate.cfg.xml").buildSessionFactory();
-            entityManagerFactory = Persistence.createEntityManagerFactory("rentacarData");
+            entityManagerFactory = Persistence.createEntityManagerFactory("nurseAppData");
             manager = entityManagerFactory.createEntityManager();
         } catch (Throwable ex) {
             // logger.error("No se ha podido crear SessionFactory. " + ex);
             ex.printStackTrace();
-//            throw new Exception();
+//            throw new Exception("ERROR", ex);
         }
     }
 
