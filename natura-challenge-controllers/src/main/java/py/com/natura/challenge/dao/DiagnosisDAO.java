@@ -14,7 +14,7 @@ import java.util.Map;
  */
 public class DiagnosisDAO extends DBUtils<Diagnosis> {
 
-    public static final String TABLE_NAME = "Diagnostic_Values";
+    public static final String TABLE_NAME = "Diagnosis";
 
     public List<Diagnosis> getAllDiagnosis() throws Exception {
         List<Diagnosis> diagnosisList;

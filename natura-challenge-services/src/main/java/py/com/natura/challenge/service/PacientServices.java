@@ -33,7 +33,7 @@ public class PacientServices {
     }
 
     @GET
-    @Path("/get/{pacient}")
+    @Path("/{pacient}")
     public Response getPacient(@PathParam("pacient") Integer id) throws Exception {
         try {
             return Response.ok(controller.getPacientById(id)).build();

@@ -8,7 +8,7 @@ import javax.persistence.*;
  * Fecha 30/07/19
  */
 @Entity
-@Table(name = "Diagnostic_Values")
+@Table(name = "Diagnosis")
 public class Diagnosis {
 
     @Id

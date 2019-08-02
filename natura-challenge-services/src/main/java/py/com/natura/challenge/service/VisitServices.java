@@ -32,10 +32,20 @@ public class VisitServices {
     }
 
     @GET
-    @Path("/get/{visitId}")
+    @Path("/{visitId}")
     public Response getVisitById(@PathParam("visitId") Integer id) throws Exception {
         try {
             return Response.ok(controller.getVisitById(id)).build();
+        } catch (Exception e) {
+            throw new Exception("ERROR", e);
+        }
+    }
+
+    @GET
+    @Path("/patient/{patientId}")
+    public Response getVisitByPatientId(@PathParam("patientId") Integer patientId) throws Exception {
+        try {
+            return Response.ok(controller.getVisitByAttr(patientId)).build();
         } catch (Exception e) {
             throw new Exception("ERROR", e);
         }

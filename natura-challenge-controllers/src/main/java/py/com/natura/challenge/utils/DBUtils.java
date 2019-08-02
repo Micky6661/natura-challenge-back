@@ -77,6 +77,7 @@ public class DBUtils<T> {
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
+            session.close();
         }
 
         return obj;

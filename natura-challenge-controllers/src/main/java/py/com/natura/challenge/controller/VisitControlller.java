@@ -22,7 +22,7 @@ public class VisitControlller {
 
     public void createVisit(Visit visit) throws Exception {
         try {
-            visit.setObservation(diagnosis(visit.getBloodPressure(), visit.getHeartRate()));
+            visit.setObservation(diagnosis(visit.getBloodPressure(), visit.getHeartRate()) + ". " + visit.getObservation());
             dao.insert(visit);
         } catch (Exception e) {
             e.printStackTrace();
@@ -73,4 +73,12 @@ public class VisitControlller {
         return diagnosisController.checkPressureValues(pressure, heartRate);
     }
 
+    public List<Visit> getVisitByAttr(Integer patientId) throws Exception {
+        try {
+            return dao.getByAtribute(Visit.class, VisitDAO.TABLE_NAME, String.valueOf(patientId), "pacient_id");
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new Exception("ERROR", e);
+        }
+    }
 }
