@@ -15,7 +15,7 @@
         <version.jersey-core>1.8</version.jersey-core>
         <version.javaee-api>7.0</version.javaee-api>
         <version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
-        <version.mysql>8.0.13</version.mysql>
+        <version.mysql>8.0.28</version.mysql>
         <version.hibernate-core>5.3.7.Final</version.hibernate-core>
     </properties>
 
