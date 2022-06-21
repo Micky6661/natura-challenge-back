@@ -15,7 +15,7 @@
     <properties>
         <version.natura-challenge>${project.version}</version.natura-challenge>
         <version.hibernate-core>5.3.7.Final</version.hibernate-core>
-        <version.mysql>8.0.13</version.mysql>
+        <version.mysql>8.0.28</version.mysql>
     </properties>
 
     <dependencies>
